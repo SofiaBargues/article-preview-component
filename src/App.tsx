@@ -28,11 +28,21 @@ function Initial() {
 }
 function Share() {
   return (
-    <div className="flex flex-row justify-center items-center gap-3 w-44 p-2">
-      <div className=" text-xs  text-slate-400 mr-2">S H A R E</div>
-      <img alt="facebook" src={facebook} className="h-[20px]  "></img>
-      <img alt="twitter" src={twitter} className="h-[20px]"></img>
-      <img alt="pinterest" src={pinterest} className="h-[20px] "></img>
+    <div className="flex flex-row justify-center items-center gap-3 w-44  md:w-36 p-2 ">
+      <div className=" text-[12px]  md:text-[10px]  text-slate-400 mr-2">
+        S H A R E
+      </div>
+      <img
+        alt="facebook"
+        src={facebook}
+        className="h-[20px] md:h-[10px]  "
+      ></img>
+      <img alt="twitter" src={twitter} className="h-[20px] md:h-[10px] "></img>
+      <img
+        alt="pinterest"
+        src={pinterest}
+        className="h-[20px] md:h-[10px] "
+      ></img>
     </div>
   );
 }
@@ -79,14 +89,13 @@ function App() {
             </div>
             <div
               className={
-                "" +
-                " " +
-                (isSharing
-                  ? "block md:absolute md:top-[-20px] md:bg-gray-600 "
-                  : "hidden")
+                isSharing
+                  ? "block md:absolute md:top-[-33px] md:bg-gray-600 rounded-lg md:mx-36"
+                  : "hidden"
               }
             >
               <Share />
+              <div className="bg-gray-600  h-4 w-4 rotate-45 absolute mt-[-10px] ml-[68px] "></div>
             </div>
             <button
               onClick={handleMoreClick}
