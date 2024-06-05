@@ -7,6 +7,7 @@ import facebook from "./assets/icon-facebook.svg";
 import drawers from "./assets/drawers.jpg";
 import twitter from "./assets/icon-twitter.svg";
 import share from "./assets/icon-share.svg";
+import sharewithe from "./assets/icon-share-withe.svg";
 
 function Initial() {
   return (
@@ -68,18 +69,21 @@ function App() {
         </div>
         <div
           className={
-            "h-20 flex rounded-b-lg justify-between p-6 mt-10 " +
+            "h-20 items-center flex rounded-b-lg justify-between p-6 mt-10 " +
             (showMore ? "bg-white " : " bg-gray-600")
           }
         >
           {showMore ? <Initial /> : <Share />}
           <button
             onClick={handleMoreClick}
-            className="rounded-full h-[35px] flex justify-end bg-[#f0f5fd] cursor-pointer"
+            className={
+              "rounded-full h-[35px] flex justify-end cursor-pointer " +
+              (showMore ? " bg-[#f0f5fd]" : "bg-[#6e8099] ")
+            }
           >
             <img
               alt="share"
-              src={share}
+              src={showMore ? share : sharewithe}
               className="h-[35px] w-[35px] p-2"
             ></img>
           </button>
