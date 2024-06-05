@@ -26,16 +26,22 @@ function Initial() {
     </div>
   );
 }
-function Share() {
+function Share({ className }: { className: string }) {
   return (
-    <div className="flex flex-row justify-center items-center gap-3 w-44  md:w-36 p-2 ">
+    <div
+      className={
+        "flex flex-row justify-center items-center gap-3 w-44  md:w-36 p-2 relative " +
+        " " +
+        className
+      }
+    >
       <div className=" text-[12px]  md:text-[10px]  text-slate-400 mr-2">
         S H A R E
       </div>
       <img
         alt="facebook"
         src={facebook}
-        className="h-[20px] md:h-[10px]  "
+        className="h-[20px] md:h-[10px] "
       ></img>
       <img alt="twitter" src={twitter} className="h-[20px] md:h-[10px] "></img>
       <img
@@ -57,11 +63,11 @@ function App() {
   return (
     <div className="bg-[#edf2f8] h-screen flex justify-ceter ">
       <div className="bg-white h-[520px] w-[327px] m-auto rounded-md flex flex-col justify-between md:flex md:flex-row md:h-[186px] md:w-[484px]">
-        <div>
+        <div className="h-[195px] w-[327px] md:h-[186px] md:w-[484px]">
           <img
             alt="drawers"
             src={drawers}
-            className="h-[195px] w-[327px] md:h-[186px] md:w-[484px] object-cover rounded-t-md md:rounded-tr-none md:rounded-l-md"
+            className=" object-cover h-full w-full rounded-t-md md:rounded-tr-none md:rounded-l-md"
           ></img>
         </div>
         <div className="flex flex-col justify-between h-full">
@@ -78,7 +84,7 @@ function App() {
           </div>
           <div
             className={
-              "md:px-5 py-5 px-8 items-center relative flex rounded-b-lg justify-between md:pb-6 md:mt-0 " +
+              "md:px-5 py-3 px-8 items-center relative flex rounded-b-lg justify-between md:pb-6 md:mt-0 " +
               (isSharing ? " bg-gray-600 md:bg-white" : "bg-white ")
             }
           >
@@ -94,7 +100,7 @@ function App() {
                   : "hidden"
               }
             >
-              <Share />
+              <Share className="z-10" />
               <div className="bg-gray-600  h-4 w-4 rotate-45 absolute mt-[-10px] ml-[68px] "></div>
             </div>
             <button
