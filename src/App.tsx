@@ -1,10 +1,50 @@
 // import { useState } from "react";
 // import viteLogo from "/vite.svg";
+import { useState } from "react";
 import michelle from "./assets/avatar-michelle.jpg";
 import drawers from "./assets/drawers.jpg";
 import share from "./assets/icon-share.svg";
 
+function Initial() {
+  return (
+    <div className="flex flex-row">
+      <img
+        alt="michelle"
+        src={michelle}
+        className="h-[35px] w-[35px]  rounded-full mr-4"
+      ></img>
+      <div className="flex-col flex">
+        <div className="text-xs font-semibold  text-slate-700">
+          Michelle Appleton
+        </div>
+        <div className="text-xs text-slate-400"> 28 Jun 2020</div>
+      </div>
+    </div>
+  );
+}
+function Share() {
+  return (
+    <div className="flex flex-row">
+      <img
+        alt="michelle"
+        src={michelle}
+        className="h-[35px] w-[35px]  rounded-full mr-4"
+      ></img>
+      <div className="flex-col flex">
+        <div className="text-xs font-semibold  text-slate-700">Michelle</div>
+        <div className="text-xs text-slate-400"> 28 Jun 2020</div>
+      </div>
+    </div>
+  );
+}
+
 function App() {
+  const [showMore, setShowMore] = useState(false);
+
+  function handleMoreClick() {
+    setShowMore(!showMore);
+  }
+
   return (
     <div
       className="bg-[#edf2f8] h-screen flex justify-ceter 
@@ -26,28 +66,24 @@ function App() {
             felt slightly bare and uninviting. I've got some simple tips to help
             you make any room feel complete.
           </p>
-          <div className="flex justify-between my-14">
-            <div className="flex flex-row">
-              <img
-                alt="michelle"
-                src={michelle}
-                className="h-[35px] w-[35px]  rounded-full mr-4"
-              ></img>
-              <div className="flex-col flex">
-                <div className="text-xs font-semibold  text-slate-700">
-                  Michelle Appleton
-                </div>
-                <div className="text-xs text-slate-400"> 28 Jun 2020</div>
-              </div>
-            </div>
-            <button className="rounded-full flex justify-end bg-[#f0f5fd] cursor-pointer">
-              <img
-                alt="share"
-                src={share}
-                className="h-[35px]  w-[35px]  rounded-t-md p-2"
-              ></img>
-            </button>
-          </div>
+        </div>
+        <div
+          className={
+            "h-20 flex rounded-b-lg justify-between mt-10 " +
+            (showMore ? "bg-white " : " bg-gray-600")
+          }
+        >
+          {showMore ? <Initial /> : <Share />}
+          <button
+            onClick={handleMoreClick}
+            className="rounded-full flex justify-end bg-[#f0f5fd] cursor-pointer"
+          >
+            <img
+              alt="share"
+              src={share}
+              className="h-[35px]  w-[35px] p-2"
+            ></img>
+          </button>
         </div>
       </div>
     </div>
