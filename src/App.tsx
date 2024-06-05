@@ -16,12 +16,12 @@ function App() {
           src={drawers}
           className="h-[195px]  w-[327px] rounded-t-md"
         ></img>
-        <div className="mx-[32px] mt-[40px]">
-          <h1 className="text-[#4e5359] ">
+        <div className="mx-[32px] mt-[0px] flex-col ">
+          <h1 className="text-[#4e5359] font-semibold py-5">
             Shift the overall look and feel by adding these wonderful touches to
             furniture in your home
           </h1>
-          <p className="text-[#73767a] text-sm mt-">
+          <p className="text-[#73767a]  text-sm mt-">
             Ever been in a room and felt like something was missing? Perhaps it
             felt slightly bare and uninviting. I've got some simple tips to help
             you make any room feel complete.
