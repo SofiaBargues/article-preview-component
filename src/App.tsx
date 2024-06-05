@@ -30,9 +30,9 @@ function Share() {
   return (
     <div className="flex flex-row gap-5">
       <div className=" text-sm  text-slate-400">S H A R E</div>
-      <img alt="pinterest" src={pinterest} className="h-[20px] "></img>
       <img alt="facebook" src={facebook} className="h-[20px]  "></img>
       <img alt="twitter" src={twitter} className="h-[20px]"></img>
+      <img alt="pinterest" src={pinterest} className="h-[20px] "></img>
       <div className="flex-col flex"></div>
     </div>
   );
