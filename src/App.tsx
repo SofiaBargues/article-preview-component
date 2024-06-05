@@ -2,7 +2,10 @@
 // import viteLogo from "/vite.svg";
 import { useState } from "react";
 import michelle from "./assets/avatar-michelle.jpg";
+import pinterest from "./assets/icon-pinterest.svg";
+import facebook from "./assets/icon-facebook.svg";
 import drawers from "./assets/drawers.jpg";
+import twitter from "./assets/icon-twitter.svg";
 import share from "./assets/icon-share.svg";
 
 function Initial() {
@@ -24,16 +27,12 @@ function Initial() {
 }
 function Share() {
   return (
-    <div className="flex flex-row">
-      <img
-        alt="michelle"
-        src={michelle}
-        className="h-[35px] w-[35px]  rounded-full mr-4"
-      ></img>
-      <div className="flex-col flex">
-        <div className="text-xs font-semibold  text-slate-700">Michelle</div>
-        <div className="text-xs text-slate-400"> 28 Jun 2020</div>
-      </div>
+    <div className="flex flex-row gap-5">
+      <div className=" text-sm  text-slate-400">S H A R E</div>
+      <img alt="pinterest" src={pinterest} className="h-[20px] "></img>
+      <img alt="facebook" src={facebook} className="h-[20px]  "></img>
+      <img alt="twitter" src={twitter} className="h-[20px]"></img>
+      <div className="flex-col flex"></div>
     </div>
   );
 }
@@ -69,19 +68,19 @@ function App() {
         </div>
         <div
           className={
-            "h-20 flex rounded-b-lg justify-between mt-10 " +
+            "h-20 flex rounded-b-lg justify-between p-6 mt-10 " +
             (showMore ? "bg-white " : " bg-gray-600")
           }
         >
           {showMore ? <Initial /> : <Share />}
           <button
             onClick={handleMoreClick}
-            className="rounded-full flex justify-end bg-[#f0f5fd] cursor-pointer"
+            className="rounded-full h-[35px] flex justify-end bg-[#f0f5fd] cursor-pointer"
           >
             <img
               alt="share"
               src={share}
-              className="h-[35px]  w-[35px] p-2"
+              className="h-[35px] w-[35px] p-2"
             ></img>
           </button>
         </div>
