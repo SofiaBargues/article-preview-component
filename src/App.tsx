@@ -14,7 +14,7 @@ function App() {
         <img
           alt="drawers"
           src={drawers}
-          className="h-[195px]  w-[327px] rounded-t-md"
+          className="h-[195px]  w-[327px] object-cover rounded-t-md"
         ></img>
         <div className="mx-[32px] mt-[0px] flex-col ">
           <h1 className="text-[#4e5359] font-semibold py-5">
@@ -31,10 +31,10 @@ function App() {
               <img
                 alt="michelle"
                 src={michelle}
-                className="h-[35px] w-[35px] rounded-full mr-4"
+                className="h-[35px] w-[35px]  rounded-full mr-4"
               ></img>
               <div className="flex-col flex">
-                <div className="text-xs font-semibold text-slate-700">
+                <div className="text-xs font-semibold  text-slate-700">
                   Michelle Appleton
                 </div>
                 <div className="text-xs text-slate-400"> 28 Jun 2020</div>
