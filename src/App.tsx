@@ -28,12 +28,11 @@ function Initial() {
 }
 function Share() {
   return (
-    <div className="flex flex-row gap-5">
-      <div className=" text-sm  text-slate-400">S H A R E</div>
+    <div className="flex flex-row justify-center items-center gap-3 w-44 p-2">
+      <div className=" text-xs  text-slate-400 mr-2">S H A R E</div>
       <img alt="facebook" src={facebook} className="h-[20px]  "></img>
       <img alt="twitter" src={twitter} className="h-[20px]"></img>
       <img alt="pinterest" src={pinterest} className="h-[20px] "></img>
-      <div className="flex-col flex"></div>
     </div>
   );
 }
@@ -69,26 +68,36 @@ function App() {
           </div>
           <div
             className={
-              "h-20 md:h-10 md:px-5 px-8 items-center flex rounded-b-lg justify-between md:pb-6 md:mt-0 " +
-              (isSharing ? " bg-gray-600" : "bg-white ")
+              "md:px-5 py-5 px-8 items-center relative flex rounded-b-lg justify-between md:pb-6 md:mt-0 " +
+              (isSharing ? " bg-gray-600 md:bg-white" : "bg-white ")
             }
           >
-            <div className={isSharing ? "hidden" : "block"}>
+            <div
+              className={"md:block" + " " + (isSharing ? "hidden" : "block")}
+            >
               <Initial />
             </div>
-            <div className={isSharing ? "block" : "hidden"}>
+            <div
+              className={
+                "" +
+                " " +
+                (isSharing
+                  ? "block md:absolute md:top-[-20px] md:bg-gray-600 "
+                  : "hidden")
+              }
+            >
               <Share />
             </div>
             <button
               onClick={handleMoreClick}
               className={
                 "rounded-full h-[35px]  md:h-[25px] flex justify-end cursor-pointer " +
-                (isSharing ? " bg-[#f0f5fd]" : "bg-[#6e8099] ")
+                (isSharing ? "bg-[#6e8099] " : " bg-[#f0f5fd]")
               }
             >
               <img
                 alt="share"
-                src={isSharing ? share : sharewithe}
+                src={isSharing ? sharewithe : share}
                 className="h-[35px] w-[35px] md:h-[25px] md:w-[25px] p-2.5 md:p-2"
               ></img>
             </button>
