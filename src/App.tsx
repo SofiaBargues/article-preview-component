@@ -39,10 +39,10 @@ function Share() {
 }
 
 function App() {
-  const [showMore, setShowMore] = useState(false);
+  const [isSharing, setIsSharing] = useState(false);
 
   function handleMoreClick() {
-    setShowMore(!showMore);
+    setIsSharing(!isSharing);
   }
 
   return (
@@ -70,20 +70,25 @@ function App() {
           <div
             className={
               "h-20 md:h-10 md:px-5 px-8 items-center flex rounded-b-lg justify-between md:pb-6 md:mt-0 " +
-              (showMore ? "bg-white " : " bg-gray-600")
+              (isSharing ? " bg-gray-600" : "bg-white ")
             }
           >
-            {showMore ? <Initial /> : <Share />}
+            <div className={isSharing ? "hidden" : "block"}>
+              <Initial />
+            </div>
+            <div className={isSharing ? "block" : "hidden"}>
+              <Share />
+            </div>
             <button
               onClick={handleMoreClick}
               className={
                 "rounded-full h-[35px]  md:h-[25px] flex justify-end cursor-pointer " +
-                (showMore ? " bg-[#f0f5fd]" : "bg-[#6e8099] ")
+                (isSharing ? " bg-[#f0f5fd]" : "bg-[#6e8099] ")
               }
             >
               <img
                 alt="share"
-                src={showMore ? share : sharewithe}
+                src={isSharing ? share : sharewithe}
                 className="h-[35px] w-[35px] md:h-[25px] md:w-[25px] p-2.5 md:p-2"
               ></img>
             </button>
